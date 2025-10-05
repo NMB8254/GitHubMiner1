@@ -1,12 +1,7 @@
 package aiss.githubminer1.service;
 
 import aiss.githubminer1.model.User;
-import aiss.githubminer1.model.comments.Comment;
-import aiss.githubminer1.model.comments.MapUserComment;
-import aiss.githubminer1.model.commits.Commit;
-import aiss.githubminer1.model.commits.MapCommit;
 import aiss.githubminer1.model.issues.*;
-import aiss.githubminer1.model.projects.Project;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -87,8 +82,8 @@ public class IssueService {
     public Issue getIssueById(String id, String repo, String owner, int sinceIssues, int maxPages) {
         String uri = "https://api.github.com/repos/" + owner + "/" + repo + "/issues";
 
-        if (getAllIssues(repo, owner, sinceIssues, maxPages) != null) {
-            Optional<Issue> issueOpt = getAllIssues(repo, owner, sinceIssues, maxPages)
+        if (getAllIssues(owner, repo, sinceIssues, maxPages) != null) {
+            Optional<Issue> issueOpt = getAllIssues(owner, repo, sinceIssues, maxPages)
                     .stream()
                     .filter(issue -> issue.getId().equals(id))
                     .findFirst();
@@ -99,7 +94,7 @@ public class IssueService {
     }
 
     public List<Issue> getIssuesByAuthorId(String authorId, String repo, String owner, int sinceIssues, int maxPages) {
-        List<Issue> allIssues = getAllIssues(repo, owner, sinceIssues, maxPages);
+        List<Issue> allIssues = getAllIssues(owner, repo, sinceIssues, maxPages);
         if (allIssues == null || allIssues.isEmpty()) {
             return Collections.emptyList();
         }
@@ -111,7 +106,7 @@ public class IssueService {
     }
 
     public List<Issue> getIssuesByState(String state, String repo, String owner, int sinceIssues, int maxPages) {
-        List<Issue> allIssues = getAllIssues(repo, owner, sinceIssues, maxPages);
+        List<Issue> allIssues = getAllIssues(owner, repo, sinceIssues, maxPages);
         if (allIssues == null || allIssues.isEmpty()) {
             return Collections.emptyList();
         }

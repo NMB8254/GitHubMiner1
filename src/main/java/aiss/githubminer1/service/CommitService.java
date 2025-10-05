@@ -1,9 +1,7 @@
 package aiss.githubminer1.service;
 
-import aiss.githubminer1.model.comments.MapComment;
 import aiss.githubminer1.model.commits.Commit;
 import aiss.githubminer1.model.commits.MapCommit;
-import aiss.githubminer1.model.projects.Project;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;

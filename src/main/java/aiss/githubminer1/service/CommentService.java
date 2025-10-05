@@ -4,17 +4,13 @@ import aiss.githubminer1.model.User;
 import aiss.githubminer1.model.comments.Comment;
 import aiss.githubminer1.model.comments.MapComment;
 import aiss.githubminer1.model.comments.MapUserComment;
-import aiss.githubminer1.model.issues.MapIssue;
-import aiss.githubminer1.model.projects.Project;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class CommentService {

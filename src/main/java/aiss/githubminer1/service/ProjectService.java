@@ -1,11 +1,5 @@
 package aiss.githubminer1.service;
 
-import aiss.githubminer1.model.comments.MapComment;
-import aiss.githubminer1.model.commits.Commit;
-import aiss.githubminer1.model.commits.MapCommit;
-import aiss.githubminer1.model.issues.Issue;
-import aiss.githubminer1.model.issues.Label;
-import aiss.githubminer1.model.issues.MapIssue;
 import aiss.githubminer1.model.projects.MapProject;
 import aiss.githubminer1.model.projects.Project;
 import org.springframework.beans.factory.annotation.Autowired;
